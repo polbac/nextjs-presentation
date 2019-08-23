@@ -1,0 +1,195 @@
+import myTheme from './theme'
+import { Image } from 'mdx-deck'
+import Codeblock from './codeblock'
+
+
+export const theme = myTheme
+
+# nextjs
+
+---
+
+## #️⃣ topics
+
+<ul>
+    <Appear>
+        <li>front-end application (ui)</li>
+        <li>server side rendering</li>
+        <li>react</li>
+        <li>express</li>
+    </Appear>
+</ul>
+
+---
+
+### 1️⃣ single page application
+<ul>
+    <Appear>
+        <li>react</li>
+        <li>angular</li>
+        <li>vue</li>
+        <li>svelte</li>
+    </Appear>
+</ul>
+
+---
+
+### ⚛ react
+<ul>
+    <Appear>
+        <li>redux</li>
+        <li>saga</li>
+        <li>hooks</li>
+    </Appear>
+</ul>
+
+---
+
+### 🚀 benefits
+<ul>
+    <Appear>
+        <li>scale</li>
+        <li>reuse</li>
+        <li>modern</li>
+        <li>comunity</li>
+    </Appear>
+</ul>
+
+---
+
+###  👺 trade-off
+<ul>
+    <Appear>
+        <li>seo</li>
+        <li>performance</li>
+    </Appear>
+</ul>
+
+---
+
+###  seo
+<Codeblock code={`
+    <html>
+        <head>
+            <title>my awesome app</title>
+        </head>
+        <body>
+            <div id="app"></div>
+            <script src="bundle.d786d7a9s6d7as8das.js"></script>
+        </body>
+    </html>
+`} />
+
+---
+
+###  performance / scripting + rendering + first load
+
+<img src="https://i.ibb.co/7SDjYD2/performance.png" alt="performance" border="0" width="1100" />    
+
+---
+
+<img src="https://media.giphy.com/media/7LE0z2EEAiVCU/source.gif" />
+
+---
+
+###  ☢  server side rendering
+
+---
+
+<img src="https://media.giphy.com/media/3o7527pa7qs9kCG78A/giphy.gif" />
+
+---
+
+<img src="https://i.ibb.co/VVrNTC1/client.png" />
+
+---
+
+###  🔁 con server-side rendering
+
+---
+
+<img src="https://i.ibb.co/x15m6kd/ssr2.png" />
+
+---
+
+<Codeblock code={`
+    export class NewsComponent extends React.Component {
+        render() {
+            ...
+        }
+    }
+`} />
+
+---
+
+# client ☯ server
+
+---
+
+# ~~isomorphic~~ universal
+
+<img src="https://media.giphy.com/media/YkXNjAkG7CfEVx3gcy/giphy.gif" />
+
+---
+
+## browser
+
+❌ process ❌ request ❌ response ❌ files ❌ network ❌ etc
+
+---
+
+## server
+
+❌ fetch ❌ window ❌ document ❌ localStorage ❌ etc
+
+---
+
+<Codeblock code={`
+    export const getNews = () => new Promise((resolve, reject) => 
+        fetch(NEWS_API)
+            .then(response => response.json())
+            .then(content => resolve(content))
+    )
+`} />
+
+
+---
+
+<Codeblock code={`
+    import * from 'universal-fetch'
+    export const getNews = () => new Promise((resolve, reject) => 
+        fetch(NEWS_API)
+            .then(response => response.json())
+            .then(content => resolve(content))
+    )
+`} />
+
+
+---
+
+<a href='https://nextjs.org/' target='_blank'><img src="https://i.imgur.com/sxESnvo.png"/></a>
+
+---
+
+<a target='_blank' href='https://www.zeit.co'><img src="https://assets.zeit.co/image/upload/q_auto/front/assets/design/white-triangle.png" /></a>
+
+---
+
+### 🇦🇷 guillermo rauch
+<img src="https://zeit.co/api/www/avatar/?u=rauchg&s=160" />
+
+---
+
+## features
+
+
+<ul>
+    <Appear>
+        <li>file system routing</li>
+        <li>automatic code splitting</li>
+        <li>server side rendering</li>
+        <li>static export</li>
+        <li>custom server</li>
+        <li><a href='https://github.com/zeit/next.js/tree/canary/examples' target='_blank'>plugins & examples</a></li>
+    </Appear>
+</ul>

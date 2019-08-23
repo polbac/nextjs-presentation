@@ -1,0 +1,13 @@
+{
+  "name": "nextjs-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "emotion-theming": "^10.0.14",
+    "mdx-deck": "^3.0.9"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  }
+}
