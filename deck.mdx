@@ -36,6 +36,8 @@ import Codeblock from './codeblock'
 ### ⚛ react on suricata team
 <ul>
     <Appear>
+        <li>next</li>
+        <li>typescript</li>
         <li>redux</li>
         <li>saga</li>
         <li>hooks</li>
@@ -83,7 +85,27 @@ import Codeblock from './codeblock'
 
 ###  🐌 performance / scripting + rendering + first load
 
-<img src="https://i.ibb.co/7SDjYD2/performance.png" alt="performance" border="0" width="1100" />    
+<img src="https://i.ibb.co/7SDjYD2/performance.png" alt="performance" border="0" width="1100" /> 
+
+---
+
+---
+
+<Codeblock code={`
+    export class NewsComponent extends React.Component {
+        componendDidMount() {
+            fetch('api/news')
+                .then(news => this.setState({ news }))
+        }
+        render() {
+            ...
+        }
+    }
+`} />
+
+---
+
+<img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAB84hZ.img?h=416&w=624&m=6&q=60&o=f&l=f&x=0&y=0" />
 
 ---
 
@@ -109,15 +131,6 @@ import Codeblock from './codeblock'
 
 <img src="https://i.ibb.co/x15m6kd/ssr2.png"  width="1300"/>
 
----
-
-<Codeblock code={`
-    export class NewsComponent extends React.Component {
-        render() {
-            ...
-        }
-    }
-`} />
 
 ---
 
