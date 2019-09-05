@@ -33,13 +33,13 @@ import Codeblock from './codeblock'
 
 ---
 
-### ⚛ react on suricata team
+### 🐿 stack on suricata team
 <ul>
     <Appear>
         <li>next</li>
         <li>typescript</li>
         <li>redux</li>
-        <li>saga</li>
+        <li>redux-saga</li>
         <li>hooks</li>
     </Appear>
 </ul>
@@ -86,8 +86,6 @@ import Codeblock from './codeblock'
 ###  🐌 performance / scripting + rendering + first load
 
 <img src="https://i.ibb.co/7SDjYD2/performance.png" alt="performance" border="0" width="1100" /> 
-
----
 
 ---
 
@@ -156,14 +154,11 @@ import Codeblock from './codeblock'
 
 ---
 
-<Codeblock code={`
-    export const getNews = () => new Promise((resolve, reject) => 
+<Codeblock code={`export const getNews = () => new Promise((resolve, reject) => 
         fetch(NEWS_API)
             .then(response => response.json())
             .then(content => resolve(content))
-    )
-`} />
-
+    )`} />
 
 ---
 
@@ -175,7 +170,6 @@ import Codeblock from './codeblock'
             .then(content => resolve(content))
     )
 `} />
-
 
 ---
 
@@ -204,6 +198,41 @@ import Codeblock from './codeblock'
         <li><a href='https://github.com/zeit/next.js/tree/canary/examples' target='_blank'>plugins & examples</a></li>
     </Appear>
 </ul>
+
+---
+
+<img width="1200" src="https://i.ibb.co/jT7xf2W/Untitled-Diagram.jpg" />
+
+---
+
+<Codeblock code={`// server
+ReactDOMServer.renderToString(<App />)
+`} />
+
+
+---
+
+<Codeblock code={`// client
+ReactDOM.render(<App />, document.getElementById('app'))
+`} />
+
+---
+
+<Codeblock code={`
+    export class NewsComponent extends React.Component {
+        async getInitialProps() {  
+            // server side 
+            const response = await fetch('api/news')
+            return { news: response.news }
+        }
+        componentDidMount() {
+            // client side
+        }
+        render() {
+            // ...
+        }
+    }
+`} />
 
 ---
 
