@@ -4,11 +4,11 @@ import Codeblock from './codeblock'
 
 
 
-# nextjs & server side rendering
+### nextjs 🔵 server side rendering
 
 ---
 
-## #️⃣ topics
+### #️⃣ topics
 
 <ul>
     <Appear>
@@ -33,7 +33,7 @@ import Codeblock from './codeblock'
 
 ---
 
-### 🐿 stack on suricata team
+### 🐿 tech stack on suricata team
 <ul>
     <Appear>
         <li>next</li>
@@ -41,6 +41,17 @@ import Codeblock from './codeblock'
         <li>redux</li>
         <li>redux-saga</li>
         <li>hooks</li>
+    </Appear>
+</ul>
+
+---
+
+
+### ☎️ next on trocafone
+<ul>
+    <Appear>
+        <li>my orders</li>
+        <li>new upselling (coming soon)</li>
     </Appear>
 </ul>
 
@@ -111,22 +122,26 @@ import Codeblock from './codeblock'
 
 ---
 
-###  ☢  server side rendering
+###  🔮  server side rendering
 
 ---
 
 <img src="https://media.giphy.com/media/3o7527pa7qs9kCG78A/giphy.gif" />
 
 ---
+<img src="https://media.giphy.com/media/xT9IgusfDcqpPFzjdS/source.gif" width="200"/>
 
+<div style='text-align:center;margin-top:40px;'>render your templete on server side on the first request<br/>and continue your application on the client.</div>
+
+
+
+---
+###  🔧 static single page application
 <img src="https://i.ibb.co/VVrNTC1/client.png" width="1300"/>
 
 ---
 
-###  🔁 con server-side rendering
-
----
-
+###  ⚒ with server-side rendering
 <img src="https://i.ibb.co/x15m6kd/ssr2.png"  width="1300"/>
 
 
@@ -192,8 +207,7 @@ import Codeblock from './codeblock'
     <Appear>
         <li>file system routing</li>
         <li>automatic code splitting</li>
-        <li>server side rendering</li>
-        <li>static export</li>
+        <li>export options: ssr || static export</li>
         <li>custom server</li>
         <li><a href='https://github.com/zeit/next.js/tree/canary/examples' target='_blank'>plugins & examples</a></li>
     </Appear>
@@ -201,26 +215,22 @@ import Codeblock from './codeblock'
 
 ---
 
-<img width="11s00" src="https://i.ibb.co/jT7xf2W/Untitled-Diagram.jpg" />
+<img width="1100" src="https://i.ibb.co/jT7xf2W/Untitled-Diagram.jpg" />
 
 ---
-
-<Codeblock code={`// server
-ReactDOMServer.renderToString(<App />)
-`} />
+### server side
+<Codeblock code={`ReactDOMServer.renderToString(<App />)`} />
 
 
 ---
-
-<Codeblock code={`// client
-ReactDOM.render(<App />, document.getElementById('app'))
-`} />
+### client side
+<Codeblock code={`ReactDOM.render(<App />, document.getElementById('app'))`} />
 
 ---
 
 <Codeblock code={`
     export class NewsComponent extends React.Component {
-        async getInitialProps() {  
+        async getInitialProps({ req, res }) {  
             // server side 
             const response = await fetch('api/news')
             return { news: response.news }
@@ -230,6 +240,27 @@ ReactDOM.render(<App />, document.getElementById('app'))
         }
         render() {
             // ...
+        }
+    }
+`} />
+
+---
+
+### 🕺🏼 cool
+<Codeblock code={`
+    import dynamic from 'next/dynamic'
+    const Banners = dynamic(() => import('./components/banners'), {
+        ssr: false
+    });
+    export class NewsComponent extends React.Component {
+        render() {
+            return (
+                <React.Fragment>
+                    <Header />
+                    <MainContent />
+                    <Banners /> /* only client side */
+                </React.Fragment>
+            )
         }
     }
 `} />
@@ -249,6 +280,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
         <li>do you really need?</li>
         <li>zero configuration === problems</li>
         <li>next is the best choice for ssr</li>
+        <li>ie complicated</li>
         <li>be careful where side you run your code</li>
     </Appear>
 </ul>
